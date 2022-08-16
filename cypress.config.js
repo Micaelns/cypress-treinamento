@@ -5,7 +5,7 @@ const grepTags = require('cypress-grep/src/plugin')
 module.exports = defineConfig({
   viewportWidth: 1140,
   viewportHeight: 768,
-  defaultCommandTimeout: 10000,
+  defaultCommandTimeout: 30000,
   projectId: 'idProject',
   e2e: {
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
