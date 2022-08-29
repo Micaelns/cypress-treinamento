@@ -38,3 +38,14 @@ Cypress.Commands.add("login", (email, senha) => {
     cy.get('[data-test="login-password"] > .MuiInputBase-root > .MuiInputBase-input').type(senha)
     cy.get('[data-test="login-submit"]').click()
  })
+
+ Cypress.Commands.add("cadastrarUsuario", (name, email, senha) => {
+    cy.visit('cadastrar')
+    cy.get('[data-test="register-name"] > .MuiInputBase-root > .MuiInputBase-input').type(name)
+    cy.get('[data-test="register-email"] > .MuiInputBase-root > .MuiInputBase-input').type(email)
+    cy.get('[data-test="register-password"] > .MuiInputBase-root > .MuiInputBase-input').type(senha)
+    cy.get('[data-test="register-password2"] > .MuiInputBase-root > .MuiInputBase-input').type(senha)
+    cy.get('[data-test="register-submit"]').click()
+    cy.get('.large').should('contain', 'Dashboard')
+    cy.get('[data-test="navbar-logout"] > .hide-sm').click()
+ })
